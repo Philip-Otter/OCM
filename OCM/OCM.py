@@ -1,7 +1,7 @@
 ## Copyright 2023 Philip Otter
 
-from http.server import HTTPServer, CGIHTTPRequestHandler
-import os
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import socketserver
 
 
 def loadSettings(settingName):
@@ -17,10 +17,27 @@ def loadSettings(settingName):
     return(importCleaned)
 
 
+def loadHTML():
+    html = ''
+    with open('./HTMLSources/main.html', 'r') as main:
+        for line in main:
+            html += line
+    main.close()
+    return(html)
+
+
 def startServer(port):
-    os.chdir('.')
-    server = HTTPServer(server_address=('127.0.0.1', port), RequestHandlerClass=CGIHTTPRequestHandler)
+    class handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+
+            self.wfile.write(bytes(loadHTML(), "utf-8"))
+
+    server = HTTPServer(("localhost",port), handler)
     server.serve_forever()
+
 
 
 def main():
