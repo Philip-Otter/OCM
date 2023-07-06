@@ -1,4 +1,4 @@
-# OCM or Otter Cheat Manager
+# Otter Cheat Manager or OCM
 
 ## What is it?
 ***
