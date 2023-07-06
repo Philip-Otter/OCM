@@ -3,7 +3,7 @@
 ## What is it?
 ***
 
-OCM is a Python driven browser based container for video game cheat files.
+OCM is a Python driven, browser based, framework for video game cheat files.
 
 ## How does it work?
 ***
