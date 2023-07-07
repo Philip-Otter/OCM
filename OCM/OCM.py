@@ -26,7 +26,14 @@ def load(path):
                 importFace = importDirty.split("|")[0]
                 importTail = importDirty.split("|")[1]
                 newLine = importFace + loadSettings("Port") + importTail
-                print("\nNew Line:\n"+newLine)
+                print("New Line:\n"+newLine)
+                html += newLine
+            elif(('<var id = "host"' in line)==True):
+                importDirty = line
+                importFace = importDirty.split("|")[0]
+                importTail = importDirty.split("|")[1]
+                newLine = importFace + loadSettings("Host") + importTail
+                print("New Line:\n"+newLine)
                 html += newLine
             else:
                 html += line
@@ -35,13 +42,36 @@ def load(path):
 
 
 
-def headers(self):
-    self.send_response(200)
-    self.send_header("Content-type", "text/html")
-    self.end_headers()
+def headers(self, type):
+    if(type == "html"):
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "OPTIONS, GET, POST")
+        self.send_header("Access-Control-Allow-Headers", "*")
+        self.send_header("Access-Control-Max-Age", "*")
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+    elif(type == "image"):
+        self.send_response(404)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "OPTIONS, GET, POST")
+        self.send_header("Access-Control-Allow-Headers", "*")
+        self.send_header("Access-Control-Max-Age", "*")
+        self.send_header("Content-type", "image/x-icon")
+        self.end_headers()
+    elif(type == "js"):
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "OPTIONS, GET, POST")
+        self.send_header("Access-Control-Allow-Headers", "*")
+        self.send_header("Access-Control-Max-Age", "*")
+        self.send_header("Content-type", "javascript")
+        self.end_headers()
+    else:
+        print("\nERROR:  WRONG HEADER TYPE VALUE PROVIDED WHEN GENERATING RESPONSE HEADERS\n")
 
 
-def startServer(port):
+def startServer(port,host):
     class handler(BaseHTTPRequestHandler):
         
         
@@ -50,25 +80,41 @@ def startServer(port):
                 if(".js" in self.path):
                     newPath = "./HTMLSources"+self.path
                     print("Adjusted path:  "+newPath)
-                    headers(self)
+                    headers(self,"js")
                     self.wfile.write(bytes(load(newPath), "utf-8"))
+                elif("favicon" in self.path):
+                    #newPath = "./HTMLSources"+self.path
+                    #print("Adjusted path:  "+newPath)
+                    headers(self,"image")
+                    
             else:
-                headers(self)
+                headers(self,"html")
                 self.wfile.write(bytes(load('./HTMLSources/main.html'), "utf-8"))
 
 
         def do_POST(self):
-            if(self.path == "/mainpage/load"):
-                headers(self)
+            print("POST Path:  "+self.path)
+            if(self.path == "/"):
+                headers(self,"html")
                 self.wfile.write(bytes("load API", "utf-8"))
 
+        def do_OPTIONS(self):
+            self.send_response(200)
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Methods", "OPTIONS, GET, POST")
+            self.send_header("Access-Control-Allow-Headers", "*")
+            self.send_header("Access-Control-Max-Age", "*")
+            self.end_headers()
+            print("OPTIONS Method requested.")
+            print("Request path was  "+self.path+"\n")
 
-    server = HTTPServer(("localhost",port), handler)
+
+    server = HTTPServer((host,port), handler)
     server.serve_forever()
 
 
 
 def main():
-    startServer(int(loadSettings("Port")))  # Menu
+    startServer(int(loadSettings("Port")), loadSettings("Host"))  # Menu
 
 main()
