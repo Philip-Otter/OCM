@@ -17,13 +17,22 @@ def loadSettings(settingName):
     return(importCleaned)
 
 
-def loadHTML():
+def load(path):
     html = ''
-    with open('./HTMLSources/main.html', 'r') as main:
+    with open(path, 'r') as main:
         for line in main:
-            html += line
+            if(('<var id = "port"' in line)==True):
+                importDirty = line
+                importFace = importDirty.split("|")[0]
+                importTail = importDirty.split("|")[1]
+                newLine = importFace + loadSettings("Port") + importTail
+                print("\nNew Line:\n"+newLine)
+                html += newLine
+            else:
+                html += line
     main.close()
     return(html)
+
 
 
 def headers(self):
@@ -37,8 +46,15 @@ def startServer(port):
         
         
         def do_GET(self):
-            headers(self)
-            self.wfile.write(bytes(loadHTML(), "utf-8"))
+            if(self.path != "/"):
+                if(".js" in self.path):
+                    newPath = "./HTMLSources"+self.path
+                    print("Adjusted path:  "+newPath)
+                    headers(self)
+                    self.wfile.write(bytes(load(newPath), "utf-8"))
+            else:
+                headers(self)
+                self.wfile.write(bytes(load('./HTMLSources/main.html'), "utf-8"))
 
 
         def do_POST(self):
