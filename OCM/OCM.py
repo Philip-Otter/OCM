@@ -12,7 +12,7 @@ def loadSettings(settingName):
                     importDirty = line
                     print("Dirty "+settingName+" import:\n"+importDirty+"\n")
                     importCleaned = importDirty.split(':')[1]
-                    print("Cleaned "+settingName+" import:\n"+importCleaned+"\n")
+                    print("Cleaned "+settingName+" import:"+importCleaned+"\n")
     settings.close()
     return(importCleaned)
 
@@ -108,13 +108,14 @@ def startServer(port,host):
             print("OPTIONS Method requested.")
             print("Request path was  "+self.path+"\n")
 
-
-    server = HTTPServer((host,port), handler)
+    print("Host Value:",host)
+    print("Port Value:",port)
+    server = HTTPServer(("localhost",port), handler)
     server.serve_forever()
 
 
 
 def main():
-    startServer(int(loadSettings("Port")), loadSettings("Host"))  # Menu
+    startServer(int(loadSettings("Port")), str(loadSettings("Host")))  # Menu
 
 main()
