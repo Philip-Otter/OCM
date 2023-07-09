@@ -24,6 +24,7 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {#}              | A comment shellfish. This will get ignored by the interpreter.                            |
 | {@}              | The Modder shellfish. This is where we provide the modder's name.                         |
 | {v}              | The version shellfish. This is where we provide the game version the cheat was made with. |
+| {APP}            | The application shellfish. This defines our application file. Generally an .exe file.
 | {T}              | The target shellfish. Use this if all your mods base off the same .exe or .dll            |
 | {C}              | The theme shellfish. Use this to select a non standard theme.                             |
 | {H5}             | An HTML shellfish. This will allow HTML to be inserted into the cheat menu.               |
@@ -32,3 +33,22 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 
 
 In general order matters within an Oyster with the exception of the following shellfish: `{#} {@} {v} {T} {C}`
+
+### The Default line
+
+This is the bread and butter of an oyster file and uses the default shellfish. The line is organized in the following manner:
+
+Without {T} shellfish set:
+
+`{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value<TargetModule`
+
+Example:
+`{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999<CrabChampions-Win64-Shipping.exe`
+
+with {T} shellfish set:
+
+`{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value`
+
+Example:
+
+`{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999`
