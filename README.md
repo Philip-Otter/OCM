@@ -38,14 +38,14 @@ In general order matters within an Oyster with the exception of the following sh
 
 This is the bread and butter of an oyster file and uses the default shellfish. The line is organized in the following manner:
 
-Without {T} shellfish set:
+#### <b>Without</b> {T} shellfish set:
 
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value<TargetModule`
 
 Example:
 `{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999<CrabChampions-Win64-Shipping.exe`
 
-with {T} shellfish set:
+#### <b>with</b> {T} shellfish set:
 
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value`
 
