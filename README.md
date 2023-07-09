@@ -29,3 +29,6 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {H5}             | An HTML shellfish. This will allow HTML to be inserted into the cheat menu.               |
 | {JS}             | A JavaScript shellfish. This will allow Javascript to be inserted into the cheat menu.    |
 | {P3}             | A Python 3 shellfish. This will allow Python to be inserted into the generated cheat file.|
+
+
+In general order matters within an Oyster with the exception of the following shellfish: `{#} {@} {v} {T} {C}`
