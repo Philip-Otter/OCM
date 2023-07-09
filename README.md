@@ -33,7 +33,7 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {P3}             | A Python 3 shellfish. This will allow Python to be inserted into the generated cheat file.|
 
 
-In general order matters within an Oyster with the exception of the following shellfish: `{#} {@} {V} {T} {C} {X}`
+In 5H3LLf15H the order of the following shellfish does not matter `{#} {@} {V} {T} {C} {X}`. All other Shellfish will be interpreted from top to bottom.
 
 ### The Default line
 
