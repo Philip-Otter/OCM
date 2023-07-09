@@ -11,7 +11,7 @@ Cheat menus are built into modules (Oysters) and are then interpreted by OCM.
 
 ## Oysters and 5H3LLf15H
 ***
-Each Oyster file is composed of a set of instructions that is used to build out your cheat menu for a particular game. The "language" of Oysters is 5H3LLf15H. Each default line in 5H3LLf15H is used to build a singular interactive cheat. Each line after the header is defined by a "shell" and its "meat". Combined they make a unique shellfish.
+Each Oyster file is composed of a set of instructions that is used to build out your cheat menu for a particular game. The "language" of Oysters is 5H3LLf15H. Each default line in 5H3LLf15H is used to build a singular interactive cheat. Each line is prefixed by a "shell" and its "meat". Combined they make a unique shellfish.
 ```
 {} <- This is a shell
 # <- This is a comment meat
@@ -25,6 +25,7 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {@}              | The Modder shellfish. This is where we provide the modder's name.                         |
 | {v}              | The version shellfish. This is where we provide the game version the cheat was made with. |
 | {T}              | The target shellfish. Use this if all your mods base off the same .exe or .dll            |
+| {C}              | The theme shellfish. Use this to select a non standard theme.                             |
 | {H5}             | An HTML shellfish. This will allow HTML to be inserted into the cheat menu.               |
 | {JS}             | A JavaScript shellfish. This will allow Javascript to be inserted into the cheat menu.    |
 | {P3}             | A Python 3 shellfish. This will allow Python to be inserted into the generated cheat file.|
