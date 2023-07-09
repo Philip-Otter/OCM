@@ -45,7 +45,7 @@ This is the bread and butter of an oyster file and uses the default shellfish. T
 Example:
 `{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999<CrabChampions-Win64-Shipping.exe`
 
-#### <b>with</b> {T} shellfish set:
+#### <b>With</b> {T} shellfish set:
 
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value`
 
