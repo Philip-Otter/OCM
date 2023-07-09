@@ -52,3 +52,7 @@ Example:
 Example:
 
 `{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999`
+
+***
+***
+## Copyright 2023 Philip Otter
