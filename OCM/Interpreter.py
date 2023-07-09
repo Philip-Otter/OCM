@@ -91,14 +91,13 @@ def read_File(file):
                 gen_Python_3(line.strip('{P3}'))
             else:
                 pass
-        
-    oyster.close()
-                
-
 
         # Checks to see if the modder provided their name. 
         if(modderName != None):
                     mod_name(modderName)
+        
+        oyster.close()
+
 
 
 
