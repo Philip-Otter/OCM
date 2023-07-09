@@ -23,6 +23,8 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {}               | The default shellfish. This is where you put your one line - one cheat information.       |
 | {#}              | A comment shellfish. This will get ignored by the interpreter.                            |
 | {@}              | The Modder shellfish. This is where we provide the modder's name.                         |
+| {v}              | The version shellfish. This is where we provide the game version the cheat was made with. |
+| {T}              | The target shellfish. Use this if all your mods base off the same .exe or .dll            |
 | {H5}             | An HTML shellfish. This will allow HTML to be inserted into the cheat menu.               |
 | {JS}             | A JavaScript shellfish. This will allow Javascript to be inserted into the cheat menu.    |
 | {P3}             | A Python 3 shellfish. This will allow Python to be inserted into the generated cheat file.|
