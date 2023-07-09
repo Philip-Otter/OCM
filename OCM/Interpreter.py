@@ -91,6 +91,8 @@ def read_File(file):
                 gen_Python_3(line.strip('{P3}'))
             else:
                 pass
+        
+    oyster.close()
                 
 
 
