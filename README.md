@@ -24,7 +24,8 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {#}              | A comment shellfish. This will get ignored by the interpreter.                            |
 | {@}              | The Modder shellfish. This is where we provide the modder's name.                         |
 | {V}              | The version shellfish. This is where we provide the game version the cheat was made with. |
-| {APP}            | The application shellfish. This defines our application file. Generally an .exe file.
+| {X}              | The architecture shellfish. This is where we define if the application is 64 or 32 bit    |
+| {APP}            | The application shellfish. This defines our application file. Generally an .exe file.     |
 | {T}              | The target shellfish. Use this if all your mods base off the same .exe or .dll            |
 | {C}              | The theme shellfish. Use this to select a non standard theme.                             |
 | {H5}             | An HTML shellfish. This will allow HTML to be inserted into the cheat menu.               |
@@ -32,7 +33,7 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {P3}             | A Python 3 shellfish. This will allow Python to be inserted into the generated cheat file.|
 
 
-In general order matters within an Oyster with the exception of the following shellfish: `{#} {@} {V} {T} {C}`
+In general order matters within an Oyster with the exception of the following shellfish: `{#} {@} {V} {T} {C} {X}`
 
 ### The Default line
 
