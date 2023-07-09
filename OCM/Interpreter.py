@@ -58,7 +58,7 @@ def read_File(file):
             elif('{X}' in line):
                 arch = line.strip('{X}')
             elif('{APP}' in line):
-                def set_application(line.strip('{APP}'))
+                set_application(line.strip('{APP}'))
             else:
                 pass
 
