@@ -21,8 +21,6 @@ def cheat_line(line, architecture, isTargetSet: bool, path):
         targetModule =  lineTail.split("<")[1]
     
 
-
-
     def python_64():
         print("Python 64bit function")
 
@@ -30,7 +28,16 @@ def cheat_line(line, architecture, isTargetSet: bool, path):
     def python_32():
         print("Python 32bit function")
 
+
     # Evaluate our architecture
+    if(architecture == 64 or architecture ==32):
+        if(architecture ==64):
+            python_64()
+        else:
+            python_32()
+    else:
+        print("Unexpected Architecture type! Aborting!")
+        exit()
     
 
 
@@ -53,6 +60,8 @@ def set_theme(theme, path):
 def set_application(app, path):
     print("Set Application Function")
 
+    
+
 
 def gen_HTML(HTMLLine, path):
     print("Gen HTML Function")
@@ -74,7 +83,7 @@ def read_File(file, path):
         arch = None
         targetSet = False
 
-        # First sweep to find {V}, {T}, {C}, {X} shellfish
+        # First sweep to find {V}, {T}, {C}, {X}, {APP} shellfish
         print("Checking for {V}, {T}, {C}, {X}")
         for line in oyster:
             if('{V}' in line):
