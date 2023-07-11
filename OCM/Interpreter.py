@@ -1,7 +1,7 @@
 ## Copyright 2023 Philip Otter
 
 
-def cheat_line(line, architecture, isTargetSet: bool, path):
+def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber: int):
     print("Cheat Line Function")
 
     # Split our line values
@@ -28,6 +28,10 @@ def cheat_line(line, architecture, isTargetSet: bool, path):
     def python_32():
         print("Python 32bit function")
 
+    # Determine the path for our Python cheat file
+    filePath = path+"/"+str(referenceNumber)+".py"  # Example:  ~/Documents/OCM_Files/Ocean/1.py
+    # Make our Python file for the cheat
+    set_application(app, filePath)
 
     # Evaluate our architecture
     if(architecture == 64 or architecture ==32):
@@ -57,8 +61,16 @@ def set_theme(theme, path):
     print("Set Theme Function")
 
 
-def set_application(app, path):
+def set_application(app, filePath):
     print("Set Application Function")
+
+    newFile = open(filePath, "w")
+
+    # Copy over our headers into the cheat file
+    with open('./GenerativeP3Sources/headers.py') as headers:
+        for line in headers:
+            newFile.write(line)
+    headers.close()
 
     
 
@@ -81,6 +93,7 @@ def read_File(file, path):
         modderName = None
         theme = None
         arch = None
+        application = None
         targetSet = False
 
         # First sweep to find {V}, {T}, {C}, {X}, {APP} shellfish
@@ -96,7 +109,7 @@ def read_File(file, path):
             elif('{X}' in line):
                 arch = line.strip('{X}')
             elif('{APP}' in line):
-                set_application(line.strip('{APP}'), path)
+                application = line.strip('{APP}')
             else:
                 pass
 
@@ -115,12 +128,14 @@ def read_File(file, path):
             
         oyster.seek(0)  # Move back to the start of the oyster
 
+        cheatCounter = 0  # Used to reference our python files for the cheats
         # Second sweep for the rest of our shellfish
         for line in oyster:
             if('{@}' in line):
                 modderName = line.strip('{@}')
             elif('{}' in line):
-                cheat_line(line.strip('{}'),arch, targetSet, path)
+                cheat_line(line.strip('{}'),arch, targetSet, path, application, cheatCounter)
+                cheatCounter = cheatCounter+1
             elif('{H5}' in line):
                 gen_HTML(line.strip('{H5}'), path)
             elif('{JS}' in line):
