@@ -1,7 +1,7 @@
 ## Copyright 2023 Philip Otter
 
 
-def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber: int):
+def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber: int, globalTarget):
     print("Cheat Line Function")
 
     # Split our line values
@@ -13,35 +13,66 @@ def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber
     cheatName = lineFace.split(":")[1]
     baseOffset = lineBody.split(":")[0]
     pointerOffset = lineBody.split(":")[1]
+    
+    def python_gen():
+        # Determine the path for our Python cheat file
+        filePath = path+"/"+str(referenceNumber)+".py"  # Example:  ~/Documents/OCM_Files/Ocean/1.py
+        # Make our Python file for the cheat
+        set_application(app, filePath)
 
-    if(isTargetSet):
-        ModValue = lineTail
-    else:
-        ModValue = lineTail.split("<")[0]
-        targetModule =  lineTail.split("<")[1]
+
+        cheatFile = open(filePath, 'a')
+        if(isTargetSet):
+            ModValue = lineTail
+            cheatFile.write('targetModule = module_from_name(pm.process_handle, "'+str(globalTarget)+'").lpBaseOfDll')
+        else:
+            ModValue = lineTail.split("<")[0]
+            targetModule =  lineTail.split("<")[1]
+            cheatFile.write('targetModule = module_from_name(pm.process_handle, "'+str(targetModule)+'").lpBaseOfDll')
+
+        cheatFile.write('offsets = ['+pointerOffset+']')
+        cheatFile.write('baseOffset = '+baseOffset)
+        cheatFile.write('def get_pointer_address(base, offsets):')
+
+        # Evaluate our architecture
+        if(architecture == 64 or architecture ==32):
+            if(architecture == 64):
+                cheatFile.write('   addr = pm.read_longlong(base+baseOffset)')
+            else:
+                cheatFile.write('   addr = pm.read_int(base)')
+        else:
+            print("Unexpected Architecture type! Aborting!")
+            cheatFile.close()
+            exit()
+        
+        cheatFile.write('    for i in offsets:')
+        cheatFile.write('        if(i != offsets[-1]):')
+
+        # Evaluate our architecture one last time
+        if(architecture == 64):
+            cheatFile.write('            addr = pm.read_longlong(addr + i)')
+        else:
+            cheatFile.write('            addr = pm.read_int(addr + i)')
+        
+        cheatFile.write('    return addr + offsets[-1]')
+
+        # Check for interaction type
+        if(interactionType == 'Toggle'):
+            cheatFile.write('while True:')
+            cheatFile.write('    pm.write_int(get_pointer_address(targetModule, offsets), modValue)')
+        elif(interactionType == 'Button'):
+            cheatFile.write('while True:')
+            pass  # Will need to update with button code when it gets written
+        else:
+            print("Not a valid interaction type. Aborting!")
+            cheatFile.close()
+            exit()
+        
+        cheatFile.close
+
     
 
-    def python_64():
-        print("Python 64bit function")
-
-
-    def python_32():
-        print("Python 32bit function")
-
-    # Determine the path for our Python cheat file
-    filePath = path+"/"+str(referenceNumber)+".py"  # Example:  ~/Documents/OCM_Files/Ocean/1.py
-    # Make our Python file for the cheat
-    set_application(app, filePath)
-
-    # Evaluate our architecture
-    if(architecture == 64 or architecture ==32):
-        if(architecture ==64):
-            python_64()
-        else:
-            python_32()
-    else:
-        print("Unexpected Architecture type! Aborting!")
-        exit()
+    python_gen()
     
 
 
@@ -51,10 +82,6 @@ def mod_name(name, path):
 
 def program_version(line, path):
     print("Program Version Function")
-
-
-def target_module(line, path):
-    print("Target Module Function")
 
 
 def set_theme(theme, path):
@@ -101,6 +128,7 @@ def read_File(file, path):
         theme = None
         arch = None
         application = None
+        targetModule = None
         targetSet = False
 
         # First sweep to find {V}, {T}, {C}, {X}, {APP} shellfish
@@ -109,7 +137,7 @@ def read_File(file, path):
             if('{V}' in line):
                 program_version(line.strip('{V}'), path)
             elif('{T}' in line):
-                target_module(line.strip('{T}'), path)
+                targetModule = line.strip('{T}')
                 targetSet = True
             elif('{C}' in line):
                 theme = line.strip('{C}')
@@ -141,7 +169,7 @@ def read_File(file, path):
             if('{@}' in line):
                 modderName = line.strip('{@}')
             elif('{}' in line):
-                cheat_line(line.strip('{}'),arch, targetSet, path, application, cheatCounter)
+                cheat_line(line.strip('{}'),arch, targetSet, path, application, cheatCounter, targetModule)
                 cheatCounter = cheatCounter+1
             elif('{H5}' in line):
                 gen_HTML(line.strip('{H5}'), path)
