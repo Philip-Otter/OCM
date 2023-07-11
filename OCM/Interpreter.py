@@ -77,6 +77,7 @@ def set_application(app, filePath):
             newFile.write(line)
     imports.close()
 
+    newFile.write('pm = Pymem("'+str(app)+'")')  # Should read like this in the cheat file:  pm =Pymem("myApplication.exe")
     
 
 
