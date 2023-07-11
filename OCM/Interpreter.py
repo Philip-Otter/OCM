@@ -67,10 +67,15 @@ def set_application(app, filePath):
     newFile = open(filePath, "w")
 
     # Copy over our headers into the cheat file
-    with open('./GenerativeP3Sources/headers.py') as headers:
+    with open('./GenerativeP3Sources/headers.py', 'r') as headers:
         for line in headers:
             newFile.write(line)
     headers.close()
+
+    with open('./GenerativeP3Sources/imports.py', 'r') as imports:
+        for line in imports:
+            newFile.write(line)
+    imports.close()
 
     
 
