@@ -149,6 +149,7 @@ def read_File(file, path):
                 gen_JavaScript(line.strip('{JS}'), path)
             elif('{P3}' in line):
                 gen_Python_3(line.strip('{P3}'), path)
+                cheatCounter = cheatCounter+1
             else:
                 pass
 
