@@ -42,6 +42,7 @@ This is the bread and butter of an oyster file. Here the default shellfish is us
 
 #### <b>Without</b> {T} shellfish set:
 
+Syntax:
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value<TargetModule`
 
 Example:
@@ -49,6 +50,7 @@ Example:
 
 #### <b>With</b> {T} shellfish set:
 
+Syntax:
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value`
 
 Example:
