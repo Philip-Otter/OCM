@@ -42,38 +42,38 @@ This is the bread and butter of an oyster file. Here the default shellfish is us
 
 #### <b>Without</b> {T} shellfish set:
 
-Syntax:
+Syntax:  
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value<TargetModule`
 
-Example:
+Example:  
 `{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999<CrabChampions-Win64-Shipping.exe`
 
 #### <b>With</b> {T} shellfish set:
 
-Syntax:
+Syntax:  
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value`
 
-Example:
+Example:  
 `{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999`
 
 ### The Comment Shellfish
 
 The comment shellfish can be used to add comments inside of an oyster file. Any line that is preceded by a comment shellfish will be ignored by the interpreter. With the exception of lines sandwiched between an {H5}, {JS}, {P3} shellfish and an {END} shellfish.
 
-Syntax:
+Syntax:  
 `{#} Otters Love 5H3LLf15H`
 
-Example:
+Example:  
 `{#} The following mod will only work while inside of combat`
 
 ### The Modder Shellfish
 
 The Modder shellfish is where the oyster writer would put their own name to get attribution on the generated mod menu page.
 
-Syntax:
+Syntax:  
 `{@}ModderName`
 
-Example:
+Example:  
 `{@}Philip Otter`
 
 ### The Version Shellfish
@@ -84,11 +84,8 @@ Syntax:
 `{V}ApplicationVersion`
 
 Examples:  
-
 `{V}Steam Build ID:  11496984`  
-
 `{V}Early Access V1830`  
-
 `{V}Null`  
 
 
