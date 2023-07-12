@@ -88,7 +88,15 @@ Examples:
 `{V}Early Access V1830`  
 `{V}Null`  
 
+### The Architecture Shellfish
 
+The architecture shellfish is used to define our CPU architecture. OCM is only currently designed to build mod menus around 64 bit and 32 bit applications. <b>Please note, defining this value is essential!</b>
+
+Syntax:  
+`{X}Architecture`
+
+Example:  
+`{X}64`
 ***
 ***
 ## Copyright 2023 Philip Otter
