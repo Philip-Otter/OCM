@@ -80,7 +80,7 @@ Example:
 
 Ther version shellfish is where the oyster writer would provide the version of the application the cheat was built for. By default OCM uses pointers and offsets to modify values stored in memory. These pointer addresses can change from version to version so it is in our best interest to document what versions these pointer address are for. If for some reason the version of the application is unknown a "Null" can be supplied in it's place.
 
-Syntax:
+Syntax:  
 `{V}ApplicationVersion`
 
 Examples:  
