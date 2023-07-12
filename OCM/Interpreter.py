@@ -23,10 +23,10 @@ def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber
 
         cheatFile = open(filePath, 'a')
         if(isTargetSet):
-            ModValue = lineTail
+            modValue = lineTail
             cheatFile.write('targetModule = module_from_name(pm.process_handle, "'+str(globalTarget)+'").lpBaseOfDll')
         else:
-            ModValue = lineTail.split("<")[0]
+            modValue = lineTail.split("<")[0]
             targetModule =  lineTail.split("<")[1]
             cheatFile.write('targetModule = module_from_name(pm.process_handle, "'+str(targetModule)+'").lpBaseOfDll')
 
@@ -59,7 +59,7 @@ def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber
         # Check for interaction type
         if(interactionType == 'Toggle'):
             cheatFile.write('while True:')
-            cheatFile.write('    pm.write_int(get_pointer_address(targetModule, offsets), modValue)')
+            cheatFile.write('    pm.write_int(get_pointer_address(targetModule, offsets), '+ modValue+ ')')
         elif(interactionType == 'Button'):
             cheatFile.write('while True:')
             pass  # Will need to update with button code when it gets written
