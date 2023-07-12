@@ -83,10 +83,14 @@ Ther version shellfish is where the oyster writer would provide the version of t
 Syntax:
 `{V}ApplicationVersion`
 
-Examples:
-`{V}Steam Build ID:  11496984`
-`{V}Early Access V1830`
-`{V}Null`
+Examples:  
+
+`{V}Steam Build ID:  11496984`  
+
+`{V}Early Access V1830`  
+
+`{V}Null`  
+
 
 ***
 ***
