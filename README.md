@@ -66,6 +66,16 @@ Syntax:
 Example:
 `{#} The following mod will only work while inside of combat`
 
+### The Modder Shellfish
+
+The Modder shellfish is where the oyster writer would put their own name to get attribution on the generated mod menu page.
+
+Syntax:
+`{@}ModderName`
+
+Example:
+`{@}Philip Otter`
+
 ***
 ***
 ## Copyright 2023 Philip Otter
