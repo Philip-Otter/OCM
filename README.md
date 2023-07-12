@@ -11,7 +11,7 @@ Cheat menus are built into modules (Oysters) and are then interpreted by OCM.
 
 ## Oysters and 5H3LLf15H
 ***
-Each Oyster file is composed of a set of instructions that is used to build out your cheat menu for a particular game. The "language" of Oysters is 5H3LLf15H. Each default line in 5H3LLf15H is used to build a singular interactive cheat. Each line is prefixed by a "shell" and its "meat". Combined they make a unique shellfish.
+Each Oyster file is composed of a set of instructions that is used to build out your cheat menu for a particular game. The "language" of Oysters is 5H3LLf15H. Each default line in 5H3LLf15H is used to build a singular interactive cheat. In general each line is prefixed by a "shell" and its "meat". Combined they make a unique shellfish.
 ```
 {} <- This is a shell
 # <- This is a comment meat
@@ -36,9 +36,9 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 
 In 5H3LLf15H the order of the following shellfish does not matter `{#} {@} {V} {T} {C} {X} {APP}`. All other Shellfish will be interpreted from top to bottom.
 
-### The Default line
+### The Default Shellfish
 
-This is the bread and butter of an oyster file and uses the default shellfish. The line is organized in the following manner:
+This is the bread and butter of an oyster file. Here the default shellfish is used. The line following our default shellfish is organized in the following manner:
 
 #### <b>Without</b> {T} shellfish set:
 
@@ -52,8 +52,17 @@ Example:
 `{}Interaction:Name|BaseOffset:OffsetsCommaSeperatedList>Value`
 
 Example:
-
 `{}Toggle:Infinite Ammo|0x040830C8:0x10, 0xA8, 0x98, 0x300, 0x10, 0x3A8, 0x2E8>999`
+
+### The Comment Shellfish
+
+The comment shellfish can be used to add comments inside of an oyster file. Any line that is preceded by a comment shellfish will be ignored by the interpreter. With the exception of lines sandwiched between an {H5}, {JS}, {P3} shellfish and an {END} shellfish.
+
+Syntax:
+`{#} Otters Love 5H3LLf15H`
+
+Example:
+`{#} The following mod will only work while inside of combat`
 
 ***
 ***
