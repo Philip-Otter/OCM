@@ -118,6 +118,25 @@ Syntax:
 
 Syntax:  
 `{T}CrabChampions-Win64-Shipping.exe`
+
+### The Theme Shellfish
+
+The theme shellfish can be used to select a pre-made theme that will then be used while generating the cheat menu. Custom themes can be added to the "beach" folder within the OCM folder generated at target local location set in the settings.conf file. Use the naming convention of ThemeName.theme when adding theme files.
+
+Syntax:  
+`{C}ThemeName`
+
+Example:  
+`{C}Otter`
+
+#### Below is a table of themes that are part of Oyster
+
+| Theme     |
+*************
+| Default   |
+| Hacker    |
+| Blood     |
+
 ***
 ***
 ## Copyright 2023 Philip Otter
