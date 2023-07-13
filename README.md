@@ -138,7 +138,7 @@ Example:
 
 ### The HTML Shellfish
 
-HTML shellfish are used to inject custom HTML into the cheat menu build process. The end shellfish is used to terminate the section of custom html
+HTML shellfish are used to inject custom HTML into the cheat menu build process. The end shellfish is used to terminate the section of custom HTML.
 
 Syntax:  
 ```
