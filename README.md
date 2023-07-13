@@ -174,7 +174,7 @@ print("The Current enemy is now dead")
 
 ### Interaction Types
 
-| <b>Interaction Type</b> |                                                 <b>Description</b>                                                 |
+| <b>Interaction Type</b> | <b>Description</b>                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------|
 | Toggle                  | A checkbox that toggles a cheat on and off.                                                                        |
 | Button                  | A basic button with an input box to modify program values.                                                         |
