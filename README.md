@@ -137,6 +137,23 @@ Example:
 | Hacker           | Cheat like a 1980s hacker (COMING SOON) |
 | Blood            | Rip & Tear (COMING SOON)                |
 
+### The HTML Shellfish
+
+HTML shellfish are used to inject custom HTML into the cheat menu build process. The end shellfish is used to terminate the section of custom html
+
+Syntax:  
+```
+{H5}
+HTML
+{END}
+```
+
+Example:  
+```
+{H5}
+<h1>Otters are cool!</h1>
+{END}
+```
 ***
 ***
 ## Copyright 2023 Philip Otter
