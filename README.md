@@ -29,7 +29,6 @@ Each Oyster file is composed of a set of instructions that is used to build out 
 | {T}              | The target shellfish. Use this if all your mods base off the same .exe or .dll            |
 | {C}              | The theme shellfish. Use this to select a non standard theme.                             |
 | {H5}             | An HTML shellfish. This will allow HTML to be inserted into the cheat menu.               |
-| {JS}             | A JavaScript shellfish. This will allow Javascript to be inserted into the cheat menu.    |
 | {P3}             | A Python 3 shellfish. This will allow Python to be inserted into the generated cheat file.|
 | {END}            | An end shellfish. This is used to mark the end of an Oyster makers custom shellfish       |
 
@@ -154,6 +153,7 @@ Example:
 <h1>Otters are cool!</h1>
 {END}
 ```
+
 ***
 ***
 ## Copyright 2023 Philip Otter
