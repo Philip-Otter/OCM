@@ -154,6 +154,23 @@ Example:
 {END}
 ```
 
+### The Python 3 Shellfish
+
+The Python 3 shellfish is used to generate custom cheats that exceed the bounds of OCM's current functionality while still being able to utilize OCM's cheat menu generation. The end shellfish is used to terminate the section of custom Python 3.
+
+Syntax:  
+```
+{P3}InteractionType:Name
+PythonCode
+{END}
+```
+
+Example:  
+```
+{P3}Instant:Kill Current Enemy
+print("The Current enemy is now dead")
+{END}
+```
 ***
 ***
 ## Copyright 2023 Philip Otter
