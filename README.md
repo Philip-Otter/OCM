@@ -97,6 +97,17 @@ Syntax:
 
 Example:  
 `{X}64`
+
+### The Application Shellfish
+
+The application shellfish is used to define our application that we are attacking with our oyster file.
+
+Syntax:  
+`{APP}ApplicationName.extension`
+
+Example:  
+`{APP}diceydungeons.exe`
+
 ***
 ***
 ## Copyright 2023 Philip Otter
