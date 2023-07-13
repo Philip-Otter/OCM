@@ -108,6 +108,16 @@ Syntax:
 Example:  
 `{APP}diceydungeons.exe`
 
+
+### The Target Shellfish
+
+The target shellfish is used when all of our cheats are targeting the same running program wether that be a .exe or .dll
+
+Syntax:  
+`{T}TargetProgramName.extension`
+
+Syntax:  
+`{T}CrabChampions-Win64-Shipping.exe`
 ***
 ***
 ## Copyright 2023 Philip Otter
