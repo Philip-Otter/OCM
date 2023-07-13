@@ -116,7 +116,7 @@ The target shellfish is used when all of our cheats are targeting the same runni
 Syntax:  
 `{T}TargetProgramName.extension`
 
-Syntax:  
+Example:  
 `{T}CrabChampions-Win64-Shipping.exe`
 
 ### The Theme Shellfish
@@ -132,7 +132,7 @@ Example:
 #### Below is a table of themes that are part of Oyster
 
 | Theme     |
-*************
+|-----------|
 | Default   |
 | Hacker    |
 | Blood     |
