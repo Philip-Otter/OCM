@@ -63,6 +63,8 @@ def cheat_line(line, architecture, isTargetSet: bool, path, app, referenceNumber
         elif(interactionType == 'Button'):
             cheatFile.write('while True:')
             pass  # Will need to update with button code when it gets written
+        elif(interactionType == 'Instant'):
+            cheatFile.write('pm.write_int(get_pointer_address(targetModule, offsets), '+modValue+')')
         else:
             print("Not a valid interaction type. Aborting!")
             cheatFile.close()
