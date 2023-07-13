@@ -133,6 +133,7 @@ Example:
 | <b>Theme</b>     | <b>Description</b>                      |
 |------------------|-----------------------------------------|
 | Default          | A bare bones no frills cheat menu.      |
+| Otter            | The OCM color scheme                    |
 | Hacker           | Cheat like a 1980s hacker (COMING SOON) |
 | Blood            | Rip & Tear (COMING SOON)                |
 
