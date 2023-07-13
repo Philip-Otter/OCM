@@ -131,11 +131,11 @@ Example:
 
 #### Below is a table of themes that are part of Oyster
 
-| Theme     |
-|-----------|
-| Default   |
-| Hacker    |
-| Blood     |
+| <b>Theme</b>     |
+|------------------|
+| Default          |
+| Hacker           |
+| Blood            |
 
 ***
 ***
