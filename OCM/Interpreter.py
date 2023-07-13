@@ -115,10 +115,6 @@ def gen_HTML(HTMLLine, path):
     print("Gen HTML Function")
 
 
-def gen_JavaScript(JSLine, path):
-    print("Gen JavaScript Function")
-
-
 def gen_Python_3(PythonLine, path):
     print("Gen Python 3 Function")
 
@@ -175,8 +171,6 @@ def read_File(file, path):
                 cheatCounter = cheatCounter+1
             elif('{H5}' in line):
                 gen_HTML(line.strip('{H5}'), path)
-            elif('{JS}' in line):
-                gen_JavaScript(line.strip('{JS}'), path)
             elif('{P3}' in line):
                 gen_Python_3(line.strip('{P3}'), path)
                 cheatCounter = cheatCounter+1
