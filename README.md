@@ -131,11 +131,11 @@ Example:
 
 #### Below is a table of themes that are part of Oyster
 
-| <b>Theme</b>     |
-|------------------|
-| Default          |
-| Hacker           |
-| Blood            |
+| <b>Theme</b>     | <b>Description</b>                      |
+|------------------|-----------------------------------------|
+| Default          | A bare bones no frills cheat menu.      |
+| Hacker           | Cheat like a 1980s hacker (COMING SOON) |
+| Blood            | Rip & Tear (COMING SOON)                |
 
 ***
 ***
