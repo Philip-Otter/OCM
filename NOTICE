@@ -1,0 +1,9 @@
+Otter Cheat Manager
+Copyright 2023 Philip Otter
+
+
+This product depends on the following packages which, while not bundled with this product, are essential to some core components of this product.
+
+Pymem
+https://pymem.readthedocs.io/
+Copyright (c) 2020 pymem
