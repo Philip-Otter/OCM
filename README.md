@@ -171,8 +171,6 @@ Example:
 print("The Current enemy is now dead")
 {END}
 ```
-***
-***
 
 ### Interaction Types
 
@@ -182,5 +180,6 @@ print("The Current enemy is now dead")
 | Button                  | A basic button with an input box to modify program values.                                                         |
 | Instant                 | A button without an input box. Performs a single instant action that changes the game in the same way every time.  |
 
-
+***
+***
 ## Copyright 2023 Philip Otter
